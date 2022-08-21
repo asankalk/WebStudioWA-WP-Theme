@@ -1,0 +1,11 @@
+*{
+    color: #fff;
+}
+
+h1{
+    color: red($color: #000000);
+}
+
+.main{
+    width: min(100% - 1rem);
+}
