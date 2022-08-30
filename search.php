@@ -1,7 +1,11 @@
 <?php
+
 get_header();
 
 if ( have_posts() ) :
+	?>
+    <h2>Search results for query: "<?php the_search_query(); ?>"</h2>
+	<?php
 	while ( have_posts() ) : the_post(); ?>
 
         <article class="post">
@@ -34,7 +38,7 @@ if ( have_posts() ) :
 	<?php endwhile;
 
 else :
-	echo '<p>There are no posts!</p>';
+	echo '<p>No search results found!</p>';
 
 endif;
 

@@ -1,4 +1,5 @@
 <?php
+
 get_header();
 
 if ( have_posts() ) :
@@ -6,8 +7,8 @@ if ( have_posts() ) :
 
         <article class="post">
 			<?php if ( has_post_thumbnail() ) { ?>
-                <div class="small-thumbnail">
-                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'small-thumbnail' ); ?></a>
+                <div class="single-post-image">
+                    <a href="<?php the_permalink() ?>"><?php the_post_thumbnail( 'single-post-image' ); ?></a>
                 </div>
 			<?php } ?>
             <h2><a href="<?php the_permalink() ?>"><?php the_title() ?></a></h2>
@@ -25,10 +26,7 @@ if ( have_posts() ) :
 					echo trim( $output, $comma );
 				} ?>
             </p>
-            <p>
-				<?php echo get_the_excerpt() ?>
-                <a href="<?php the_permalink() ?>">Read more &raquo</a>
-            </p>
+			<?php the_content() ?>
         </article>
 
 	<?php endwhile;
